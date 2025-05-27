@@ -57,7 +57,16 @@ public class MainController {
 
     @FXML
     void onClickDeleteButton(ActionEvent event) {
-
+        int selectedUsernameIndex = usernameListView.getSelectionModel().getSelectedIndex();
+        if (selectedUsernameIndex == -1) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Figyelmeztetés");
+            alert.setHeaderText("Nincs kiválasztva felhasználónév");
+            alert.setContentText("Kérem válasszon egy felhasználónevet a törléshez.");
+            alert.showAndWait();
+        } else {
+            usernameListView.getItems().remove(selectedUsernameIndex);
+        }
     }
 
     @FXML
