@@ -26,13 +26,13 @@ public class MainController {
     private TextField usernameField;
 
     @FXML
-    private ListView<?> usernameListView;
+    private ListView<String> usernameListView;
 
     @FXML
     void onClickAboutButton(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Névjegy");
-        alert.setHeaderText(" ");
+        alert.setHeaderText("Névjegy");
         alert.setContentText("Ez egy egyszerű JavaFX alkalmazás, amiben CRUD műveleteket lehet végbevinni.\n" +
                 "Készítette: Nagy Imre, I/2/E\n" +
                 " ");
@@ -41,7 +41,18 @@ public class MainController {
 
     @FXML
     void onClickAddButton(ActionEvent event) {
-
+        String username = usernameField.getText();
+        if(username.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Figyelmeztetés");
+            alert.setHeaderText("Üres mező");
+            alert.setContentText("Kérem adjon meg egy felhasználónevet.");
+            alert.showAndWait();
+            return;
+        }else{
+            usernameListView.getItems().add(username);
+            usernameField.clear();
+        }
     }
 
     @FXML
