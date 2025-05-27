@@ -1,3 +1,13 @@
+/*
+* File: MainController.java
+* Author: Nagy Imre
+* Copyright: 2025, Nagy Imre
+* Group: I/2/E
+* Date: 2025-05-27
+* Github: https://github.com/nagy-imre/
+* Licenc: MIT
+*/
+
 package com.example;
 
 import java.util.ArrayList;
@@ -49,10 +59,8 @@ public class MainController {
     void onClickAboutButton(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Névjegy");
-        alert.setHeaderText("Névjegy");
-        alert.setContentText("Ez egy egyszerű JavaFX alkalmazás, amiben CRUD műveleteket lehet végbevinni.\n" +
-                "Készítette: Nagy Imre, I/2/E\n" +
-                " ");
+        alert.setHeaderText("Nagy Imre, I/2/E, 2025. 05. 27.");
+        alert.setContentText("Egyszerű JavaFX alkalmazás CRUD operációkkal.");
         alert.showAndWait();
     }
 

@@ -1,3 +1,13 @@
+/*
+* File: Storage.java
+* Author: Nagy Imre
+* Copyright: 2025, Nagy Imre
+* Group: I/2/E
+* Date: 2025-05-27
+* Github: https://github.com/nagy-imre/
+* Licenc: MIT
+*/
+
 package com.example;
 
 import java.io.File;
