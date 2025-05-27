@@ -2,6 +2,7 @@ package com.example;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -29,7 +30,13 @@ public class MainController {
 
     @FXML
     void onClickAboutButton(ActionEvent event) {
-
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Névjegy");
+        alert.setHeaderText(" ");
+        alert.setContentText("Ez egy egyszerű JavaFX alkalmazás, amiben CRUD műveleteket lehet végbevinni.\n" +
+                "Készítette: Nagy Imre, I/2/E\n" +
+                " ");
+        alert.showAndWait();
     }
 
     @FXML
