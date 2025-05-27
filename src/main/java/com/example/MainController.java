@@ -37,7 +37,8 @@ public class MainController {
     @FXML
     void initialize() {
         System.out.println("Initialize fut");
-
+        ArrayList<String> usernameList = Storage.readUsernames();
+        usernameListView.getItems().addAll(usernameList);
         addButton.disableProperty().bind(editMode);
         modifyButton.disableProperty().bind(editMode.not());
         deleteButton.disableProperty().bind(editMode);
@@ -107,7 +108,13 @@ public class MainController {
 
     @FXML
     void onClickSaveButton(ActionEvent event) {
-
+        ArrayList<String> usernameList = new ArrayList<>(usernameListView.getItems());
+        Storage.writeUsernames(usernameList);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Sikeres mentés");
+        alert.setHeaderText("Sikeres mentés");
+        alert.setContentText("A felhasználónevek sikeresen mentve lettek.");
+        alert.showAndWait();
     }
 
     @FXML
